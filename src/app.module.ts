@@ -13,7 +13,7 @@ import { BooksModule } from './books/books.module';
       username: 'root',
       password: 'root',
       database: 'test',
-      entities: [],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     BooksModule
