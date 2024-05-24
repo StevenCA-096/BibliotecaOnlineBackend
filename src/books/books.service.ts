@@ -18,4 +18,12 @@ export class BooksService {
         return this.bookRepository.find()
     }
 
+    getBook(id: number) {
+        return this.bookRepository.findOne({
+            where: {
+                id
+            }
+        })
+    }
+
 }
