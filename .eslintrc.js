@@ -5,6 +5,12 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
+  "prettier/prettier": [
+    "error", 
+    {
+      "endOfLine": "off"
+    }
+],
   plugins: ['@typescript-eslint/eslint-plugin'],
   extends: [
     'plugin:@typescript-eslint/recommended',

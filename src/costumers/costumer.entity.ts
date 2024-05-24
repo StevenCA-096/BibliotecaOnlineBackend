@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Loan } from 'src/loans/loans.entity'
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
 
 @Entity({ name: 'costumers' })
 export class Costumer {
@@ -22,4 +23,7 @@ export class Costumer {
 
     @Column({ unique: true })
     email: string
+
+    @OneToMany(() => Loan, (loans) => loans.costumers)
+    loans: Loan
 }
