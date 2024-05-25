@@ -4,4 +4,5 @@ export class createCustomerDto {
     surname2: string
     mobileNumber: number
     email: string
+    password: string
 }

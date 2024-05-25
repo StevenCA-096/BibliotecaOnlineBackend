@@ -8,6 +8,11 @@ export class CostumersController {
         private customerService: CostumersService
     ){}
     
+    @Get()
+    async getAllCustomers(){
+        return this.customerService.getAllCustomers();
+    }
+
     @Get(':idCustomer')
     async getCustomerById(@Param('idCustomer', ParseIntPipe) idCustomer: number){
         return this.customerService.getCustomerById(idCustomer)
