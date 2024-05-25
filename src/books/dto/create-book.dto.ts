@@ -1,6 +1,6 @@
 export class CreateBookDto {
-    bookCode: number
     bookName: string
+    synopsis: string
     authorName: string
     category: string
     isbn: string

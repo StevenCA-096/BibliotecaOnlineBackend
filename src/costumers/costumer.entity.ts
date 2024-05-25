@@ -6,11 +6,8 @@ export class Costumer {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ unique: true })
-    costumerId: number
-
     @Column()
-    Name: string
+    name: string
 
     @Column()
     surname1: string

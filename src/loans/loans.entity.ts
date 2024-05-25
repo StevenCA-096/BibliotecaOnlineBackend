@@ -7,23 +7,11 @@ export class Loan {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ unique: true })
-    loanCode: number
+    @Column({ type: 'timestamp' })
+    startDate: Date
 
-    @Column()
-    bookName: string
-
-    @Column()
-    bookCode: number
-
-    @Column()
-    costumerId: number
-
-    @Column({ type: 'datetime' })
-    dateLoan: Date
-
-    @Column({ type: 'datetime' })
-    dateReturnLoan: Date
+    @Column({ type: 'timestamp' })
+    endDate: Date
 
     @ManyToOne(() => Book, (books) => books.loans)
     books: Book

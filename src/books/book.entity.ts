@@ -6,11 +6,11 @@ export class Book {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ unique: true })
-    bookCode: number
-
     @Column()
     bookName: string
+
+    @Column()
+    synopsis: string
 
     @Column()
     authorName: string
