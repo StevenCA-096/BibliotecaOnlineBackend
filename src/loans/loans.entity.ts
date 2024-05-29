@@ -7,10 +7,10 @@ export class Loan {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ type: 'timestamp' })
+    @Column({ type: 'datetime' })
     startDate: Date
 
-    @Column({ type: 'timestamp' })
+    @Column({ type: 'datetime' })
     endDate: Date
 
     @ManyToOne(() => Book, (books) => books.loans)

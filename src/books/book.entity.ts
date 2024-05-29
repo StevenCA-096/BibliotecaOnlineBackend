@@ -16,10 +16,16 @@ export class Book {
     authorName: string
 
     @Column()
+    publicationYear: string
+
+    @Column()
+    reviews: string
+
+    @Column()
     category: string
 
     @Column({ unique: true })
-    isbn: string
+    isbn: number
 
     @OneToMany(() => Loan, (loans) => loans.books)
     loans: Loan
