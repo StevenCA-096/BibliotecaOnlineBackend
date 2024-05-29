@@ -15,11 +15,14 @@ export class Costumer {
     @Column()
     surname2: string
 
-    @Column({ unique: true })
+    @Column({ unique: true})
     mobileNumber: number
 
     @Column({ unique: true })
     email: string
+    
+    @Column()
+    password: string
 
     @OneToMany(() => Loan, (loans) => loans.costumers)
     loans: Loan

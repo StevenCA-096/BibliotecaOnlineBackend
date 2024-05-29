@@ -13,6 +13,9 @@ export class Book {
     synopsis: string
 
     @Column()
+    imgUrl:string
+
+    @Column()
     authorName: string
 
     @Column()
