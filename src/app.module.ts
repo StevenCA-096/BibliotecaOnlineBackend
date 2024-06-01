@@ -11,11 +11,11 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'Admin123',
-      database: 'biblioteca',
+      host: 'mysql-30c311eb-croyal434-99c0.e.aivencloud.com',
+      port: 23892,
+      username: 'avnadmin',
+      password: 'AVNS_EcAtKhXsLKN_JJqOO0y',
+      database: 'defaultdb',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
