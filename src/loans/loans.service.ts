@@ -40,5 +40,16 @@ export class LoansService {
         })
     }
 
+    async updateLoan(idLoan:number, newDate:Date){
+        let found = await this.loanRepository.findOne({
+            where:{id:idLoan}
+        })
+
+        if (found) {
+            found.endDate = newDate
+            return this.loanRepository.save(found);
+        }
+    }
+
 
 }
