@@ -7,7 +7,7 @@ import { credentials } from './dto/creadentialsDto';
 export class AuthController {
   constructor(private readonly authService: AuthService, private costumerService: CostumersService) {}
 
-  @Get()
+  @Post()
   async customerLogin (@Body() credentialsCustomer: credentials){
     return await this.costumerService.customerLogin(credentialsCustomer)
   }

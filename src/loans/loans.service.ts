@@ -30,13 +30,15 @@ export class LoansService {
     }
 
     async getCustomerLoans(idCustomer:number){
-        const customer = await this.customerService.getCustomerById(idCustomer)
-        return this.loanRepository.findOne({
-            where:{
-                costumers: customer
-            }, relations: {
-                books: true
+        let customer = await this.customerService.getCustomerById(idCustomer)
+        return await this.loanRepository.find({
+            where:{costumers: customer},
+            relations:{
+                books:true,
+                costumers:true
             }
         })
     }
+
+
 }

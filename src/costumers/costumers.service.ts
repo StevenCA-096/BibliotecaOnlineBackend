@@ -30,6 +30,15 @@ export class CostumersService {
         return this.customerRepository.delete(idCustomer)
     }
 
+    async getCustomerLoans(idCustomer){
+        return this.customerRepository.findOne({
+            where:{
+                id:idCustomer
+            }, relations:{
+                loans: true
+            }
+        })
+    }
     async customerLogin(customerCredentials: credentials){
         const found = await this.customerRepository.findOne({
             where:{email: customerCredentials.email}
@@ -38,10 +47,10 @@ export class CostumersService {
         if (found) {
 
             if (customerCredentials.password == found.password) {
-                return true;            
+                return found;            
             }else 
             {
-                return new HttpException(customerCredentials, HttpStatus.FORBIDDEN)
+                return new HttpException("Clave no coincide con el usuario", HttpStatus.CONFLICT)
             }
 
         }else{
